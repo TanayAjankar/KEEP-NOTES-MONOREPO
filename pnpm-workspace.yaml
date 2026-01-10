@@ -1,0 +1,8 @@
+# pnpm-workspace.yaml
+# This file defines the locations of packages within the monorepo.
+
+packages:
+  # all packages in subdirectories of 'packages/'
+  - 'packages/*'
+  # all packages in subdirectories of 'apps/'
+  - 'apps/*'
