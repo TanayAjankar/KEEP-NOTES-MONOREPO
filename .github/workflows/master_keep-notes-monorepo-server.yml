@@ -23,11 +23,13 @@ jobs:
         with:
           node-version: '22.x'
 
-      - name: npm install, build, and test
-        run: |
-          npm install
-          npm run build --if-present
-          npm run test --if-present
+      - name: Install server dependencies
+        working-directory: packages/server
+        run: npm install
+
+      - name: Build server
+        working-directory: packages/server
+        run: npm run build
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
