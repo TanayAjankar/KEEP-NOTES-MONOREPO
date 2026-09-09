@@ -12,7 +12,9 @@ export const setSessionCallbacks = (sessionExpiredCallback, logoutCallback, auth
 };
 
 export const apiConfig = {
-    baseURL: "http://localhost:3000",
+    // Vite injects VITE_* values when building the desktop app. Keep the
+    // local server URL as the development fallback.
+    baseURL: import.meta.env.VITE_API_BASE_URL || "http://localhost:5001",
     timeout: 10000,
     headers: {
         "Content-Type": "application/json",
